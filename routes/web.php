@@ -7,14 +7,14 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about',['nama' => 'about']);
+    return view('about',['nama' => 'about', 'tilte' => 'about']);
 });
 
 Route::get('/home', function () {
-    return view('home', ['nama' => 'Home']);
+    return view('home', ['nama' => 'Home', 'tilte' => 'Home']);
 });
 
 
 Route::get('/profile', function () {
-    return view('profile', ['nama' => 'Profile']);
+    return view('profile', ['nama' => 'Profile', 'tilte' => 'Profile']);
 });
