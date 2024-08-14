@@ -9,7 +9,8 @@
             <div class="ml-10 flex items-baseline space-x-4">
               <x-nav-link to="home">Home</x-nav-link>
               <x-nav-link to="about">About</x-nav-link>
-              <x-nav-link to="profile">Profile</x-nav-link>
+              <x-nav-link to="posts">blog</x-nav-link>
+              <x-nav-link to="contact">Contact</x-nav-link>
             </div>
           </div>
         </div>
@@ -71,7 +72,8 @@
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <x-nav-link to="home">Home</x-nav-link>
         <x-nav-link to="about">About</x-nav-link>
-        <x-nav-link to="profile">Profile</x-nav-link>
+        <x-nav-link to="posts">blog</x-nav-link>
+        <x-nav-link to="contact">Contact</x-nav-link>
       </div>
       <div class="border-t border-gray-700 pb-3 pt-4">
         <div class="flex items-center px-5">
