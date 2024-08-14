@@ -3,15 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use \Illuminate\Support\Arr;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/about', function () {
     return view('about',['tilte' => 'about']);
 });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home', ['tilte' => 'Home']);
 });
 
@@ -65,7 +62,7 @@ Route::get('/posts/{slug}', function($slug){
     $post = Arr::first($posts, function ($post) use ($slug) {
         return $post['slug'] == $slug;
     });
-    return view('post', ['tilte' => 'Detail Post', 'post' => $post]);
+    return view('post', ['tilte' => $_SERVER['REQUEST_URI'], 'post' => $post]);
 });
 
 Route::get('/contact', function () {
