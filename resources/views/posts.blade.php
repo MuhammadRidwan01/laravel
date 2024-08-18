@@ -1,7 +1,9 @@
 <x-layout>
-  <x-slot:nama>{{ $tilte }}</x-slot:nama>
+  <x-slot:nama>{{ $title }}</x-slot:nama>
 
-  
+  <div class="mt-8">
+        {{ $posts->links() }}
+    </div>
   <div class="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     @foreach ($posts as $post)
     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -40,5 +42,8 @@
     </div>
     @endforeach
   </div>
+  <div class="mt-8">
+        {{ $posts->links() }}
+    </div>
 
 </x-layout>

@@ -5,22 +5,23 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/about', function () {
-    return view('about',['tilte' => 'about']);
+    return view('about',['title' => 'about']);
 });
 
 Route::get('/', function () {
-    return view('home', ['tilte' => 'Home']);
+    return view('home', ['title' => 'Home']);
 });
 
 
 Route::get('/posts', function () {
-    return view('posts', ['tilte' => 'Blog', 'posts' => Post::all()]);
+        //panination Model::paginate(yang di tampilkan dalam satu halaman)
+    return view('posts', ['title' => 'Blog', 'posts' => Post::Paginate(6)]);
 });
 
 Route::get('/posts/{slug}', function ($slug) {
-    return view('post', ['tilte' => 'Blog', 'post' => Post::find($slug)]);
+    return view('post', ['title' => 'Blog', 'post' => Post::find($slug)]);
 });
 
 Route::get('/contact', function () {
-    return view('contact', ['tilte' => 'contact']);
+    return view('contact', ['title' => 'contact']);
 });
