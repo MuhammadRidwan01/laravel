@@ -2,6 +2,8 @@
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+// untuk controler post
+use App\Http\Controllers\PostController;
 
 
 Route::get('/about', function () {
@@ -12,11 +14,13 @@ Route::get('/', function () {
     return view('home', ['title' => 'Home']);
 });
 
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
-Route::get('/posts', function () {
-        //panination Model::paginate(yang di tampilkan dalam satu halaman)
-    return view('posts', ['title' => 'Blog', 'posts' => Post::Paginate(6)]);
-});
+
+// Route::get('/posts', function () {
+//         //panination Model::paginate(yang di tampilkan dalam satu halaman)
+//     return view('posts', ['title' => 'Blog', 'posts' => Post::Paginate(6)]);
+// });
 
 Route::get('/posts/{slug}', function ($slug) {
     return view('post', ['title' => 'Blog', 'post' => Post::find($slug)]);
