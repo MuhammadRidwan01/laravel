@@ -13,7 +13,7 @@
     <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Halaman tidak di temukan</h1>
     <p class="mt-6 text-base leading-7 text-gray-600">Maaf, kami tidak dapat menemukan "{{ $_SERVER['REQUEST_URI'] }}"  halaman yang Anda minta.</p>
     <div class="mt-10 flex items-center justify-center gap-x-6">
-      <a href="/home" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Kembali ke DashBoard</a>
+      <a href="/" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Kembali ke DashBoard</a>
     </div>
   </div>
 </main>

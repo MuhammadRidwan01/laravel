@@ -12,6 +12,18 @@ class PostSeeder extends Seeder
     /**
      * Run the database seeds.
      */
+    public function RandomDate() {
+        //Start point of our date range.
+        $start = strtotime("10 September 2022");
+        
+        //End point of our date range.
+        $end = strtotime("22 July 2026");
+
+        //Custom range.
+        $timestamp = mt_rand($start, $end);
+        return date("d F Y", $timestamp);
+    }
+
     public function run(): void
     {
         $posts = [
@@ -104,6 +116,7 @@ class PostSeeder extends Seeder
         foreach ($posts as $post) {
             Post::create([
                 'slug' => Str::slug($post['title']),
+                'published_at' => $this->RandomDate(),
                 'title' => $post['title'],
                 'author' => $post['author'],
                 'body' => $post['body'],

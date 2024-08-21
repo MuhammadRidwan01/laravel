@@ -11,11 +11,7 @@ class Post extends Model
 
     public static function find($slug)
     {
-    $post = Arr::first(self::all(), fn($article) => $article['slug'] == $slug);
-    if (!$post) {
-        abort(404); 
-    }
-
+    $post = Arr::first(self::all(), fn($article) => $article['slug'] == $slug) ?? abort(404);
     return $post;
     }
 }

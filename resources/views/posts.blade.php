@@ -1,5 +1,5 @@
 <x-layout>
-  <x-slot:nama>{{ $title }}</x-slot:nama>
+  <x-slot:title>{{ $title }}</x-slot:title>
 
   <div class="mt-8">
         {{ $posts->links() }}
@@ -12,7 +12,7 @@
           <span class="text-gray-600 font-bold text-xl">LOADING CUYY...</span>
         </div>
         <img class="rounded-t-lg w-full h-48 object-cover absolute top-0 left-0" 
-             src="https://picsum.photos/920/613?random={{ urlencode($post['title']) }}" 
+             src="https://picsum.photos/seed/{{ urlencode($post['title']) }}/920/613" 
              alt="{{ $post['title'] }}"
              onload="this.style.opacity='1'"
              style="opacity: 0; transition: opacity 0.3s ease-in-out;">
@@ -35,7 +35,7 @@
           </div>
           <div class="ml-3">
             <p class="text-sm font-medium text-gray-900 dark:text-gray-200">{{ $post['author'] }}</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400">13 Agustus 2024</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">{{ $post['published_at'] }}</p>
           </div>
         </div>
       </div>
